@@ -1,0 +1,18 @@
+
+#div1 {
+    font-size: 3vw;
+    padding: 10px;
+    border: 10px;
+    margin: auto;
+    border-radius: 18px;
+    border-color: gray;
+}
+
+#div2 {
+    font-size: 3em;
+    padding: 10px;
+    border: 10px;
+    margin: auto;
+    border-radius: 18px;
+    border-color: gray;
+}

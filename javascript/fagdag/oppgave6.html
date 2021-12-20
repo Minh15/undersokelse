@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+
+    let aarstall = [];
+    let skuddaar = [];
+
+function aarstallfyller(forstAar, sisteAar) {
+    while (forstAar <= sisteAar) {
+        aarstall.push(forstAar)
+        forstAar++;
+    }
+}
+
+    aarstallfyller(1900, 2200);
+    console.log(aarstall)
+
+
+
+    function naarSkuddaar(aar)  {
+        for (let i = 0; i < aar.length; i++) {
+        let aarstallDividert = aar[i] / 4
+        if (Number.isInteger(aarstallDividert) === true) {
+            skuddaar.push(aarstallDividert * 4);
+        }
+    }
+}
+
+    naarSkuddaar(aarstall);
+    console.log(skuddaar);
+
+
+    let b = 30
+    function bursdag() {
+        while(b <= 76) {
+            console.log("Hurra! I år " + skuddaar[b] + " kan du endelig feire bursdag!");
+            b++;
+        }
+    }
+        bursdag()
+
+
+
+
+</script>
+</body>
+</html>

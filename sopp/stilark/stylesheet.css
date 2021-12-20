@@ -1,0 +1,49 @@
+
+div {
+    width:50%;
+    height:60%;
+    padding: 0;
+    border: 1px solid black;
+    margin: 100px;
+    background-color: lightgray;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+li {
+    display: inline;
+    border-right: 26px solid white;
+}
+
+#li {border-right: 26px solid lightgray;
+}
+
+a:focus {
+    color: red;
+}
+a:hover {
+    color: #EB5940;
+}
+
+a:active {
+    text-decoration: indianred;
+}
+
+h1, h2 {
+}
+
+h1, h2 {
+    font-family: Arial, sans-serif;
+}
+
+table, th, td {
+    border:1px solid black;
+} {
+
+}
+

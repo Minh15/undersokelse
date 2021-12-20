@@ -1,0 +1,76 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 10px;
+}
+body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+}
+#hoved {
+    width: 600px;
+    height: 400px;
+    display: grid;
+    gap: 100px;
+    background-color: #404040;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "t t t t t t"
+                       "v v h h h h"
+                       "b b b b b b";
+}
+
+#hoved > div {
+    border: 1px solid black;
+}
+div {
+    background-color: #bdd4de;
+}
+
+.topp   {
+    background-color: #3f5765;
+}
+.topp > h1 {
+    height: auto;
+}
+
+.topp    { grid-area : t; }
+.venstre {grid-area: v;}
+.hoyre   {grid-area: h;}
+.bunn    {grid-area: b;
+height: 50%;
+}
+
+.imagetop {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagebot {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+li {
+    font-family: Georgia, serif;
+}
+
+h1 {
+    color: white;
+    padding-left: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.hoyre {
+    padding-left: 10px;
+}
+
+.topp, .venstre .mid .hoyre {
+    margin: 110px;
+}

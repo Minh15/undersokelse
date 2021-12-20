@@ -1,0 +1,79 @@
+/* Codes for the navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+/* Makes the nav bar float horizontally */
+li {
+    float: left;
+}
+/* I dont know myself */
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+/* Add a gray right border to all list items */
+li {
+    border: 1px solid #bbb;
+}
+
+li a:hover {
+    background-color: gray;
+}
+
+.imgindex {
+    width: 100%;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: green;
+    margin-left: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hoved{
+    padding: 10px;
+    margin: 10%;
+    background-color: darkgray;
+}
+
+.divIdiv {
+    background-color: lightgray;
+}
+
+p {
+    font-family: "Times New Roman", serif;
+}
+
+

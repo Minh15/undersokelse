@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let ol = [
+        {   land: "Norge",
+            sted: "Lillehammer",
+            aarsTall: "1994"},
+        {   land: "Japan",
+            sted: "Nagano",
+            aarsTall: "1998"},
+        {   land: "USA",
+            sted: "Salt Lake City",
+            aarsTall: "2002"},
+        {   land: "Italia",
+            sted: "Torino",
+            aarsTall: "2006"},
+        {   land: "Canada",
+            sted: "Vancouver",
+            aarsTall: "2010"},
+        {   land: "Russland",
+            sted: "Sotsji",
+            aarsTall: "2014"},
+        {   land: "Sør-Kora",
+            sted: "Pyeongchang",
+            aarsTall: "2018"},
+        {   land: "Kina",
+            sted: "Beijing",
+            aarsTall: "2022"},
+    ];
+
+    function sammenlignLand(a, b) {
+        if (a.land > b.land) {
+            return 1;
+        } else if (a.land < b.land) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+    ol.sort(sammenlignLand);
+
+
+    for (var i = 0; i < ol.length; i++) {
+        console.log("vinter-OL i " + ol[i].aarsTall + " ble arrangert i " + ol[i].sted + " i " + ol[i].aarsTall + ". ");
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

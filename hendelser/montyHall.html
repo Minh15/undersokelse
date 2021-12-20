@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tilfeldig plassert bil bak tre bilder </title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Georgia, serif;
+        }
+        #hoved {
+            width: 60%;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: white;
+            border: 1px solid #cccccc;
+        }
+        h1, h2 {
+            font-family: Arial, sans-serif;
+        }
+        img:hover {
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+<div id="hoved">
+    <h1>Monty Hall</h1>
+    <p>Hvilken dør vil du velge?</p>
+    <img id="dor1" src="https://assets.codepen.io/5037447/dor_1.png" width="164" height="146" alt="Dør">
+    <img id="dor2" src="https://assets.codepen.io/5037447/dor_2.png" width="164" height="146" alt="Dør">
+    <img id="dor3" src="https://assets.codepen.io/5037447/dor_3.png" width="164" height="146" alt="Dør">
+</div>
+
+<script>
+
+
+    // Henter bildeelementene
+    let dorbilderEl = document.querySelectorAll("img");
+
+    // Går gjennom alle bildene og legger på samme lytter på hver av dem
+    for (let i = 0; i < dorbilderEl.length; i++) {
+        dorbilderEl[i].addEventListener("click", sjekkDor);
+    }
+
+    let bilDor = document.querySelector("dor"+ Math.floor(Math.random() * 3) + 1;)
+
+    // Funksjon som sjekker hvilken dør som ble trykket
+    function sjekkDor(e) {
+        let trykketDor = e.target;
+        console.log(trykketDor.id);
+
+        // Bytter ut bilde av valgt dør med geit eller bil
+        if (trykketDor.id === "dor1") {
+            e.target.src = "https://assets.codepen.io/5037447/geit.png";
+        } else if (trykketDor.id === "dor2") {
+            e.target.src = "https://assets.codepen.io/5037447/bil.png";
+        } else {
+            e.target.src = "https://assets.codepen.io/5037447/geit.png";
+        }
+    }
+</script>
+
+
+</body>
+</html>
