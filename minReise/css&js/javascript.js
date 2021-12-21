@@ -13,12 +13,6 @@ const data = [
     }
 
 
-
-
-
-
-
-
 function tilSortering(data){
     let prisListe = [];
         for (let posisjon = 0; posisjon < data.length; posisjon++) {
@@ -26,6 +20,14 @@ function tilSortering(data){
         }
     return prisListe.sort()
 }
+
+
+
+
+
+
+
+
 
 
 // Get the elements with class="column"
