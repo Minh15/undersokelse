@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>                         Mitt reiseliv                   </title>
-    <link rel="stylesheet" href="css&js/stilark.css">
+    <link rel="stylesheet" href="static/stilark.css">
 </head>
 
 
@@ -31,4 +31,30 @@
 
 
 </body>
+
+
+<script>
+
+
+
+    for(let pos = 0; pos < data.length; pos++) {
+        // <div class="grid-item"></div>
+        let bildeDiv = document.createElement("div");
+    //    let text = document.createElement("p")
+        // bildeDiv.append(text);
+        // text.innerText = `Ferie: ${data[pos].sted}, ${data[pos].pris}kr, ${data[pos].dato.toLocaleDateString("no-NO")}`;
+        //   bildeDiv.id = `${data[pos].sted} ${data[pos].dato}`;
+     //   bildeDiv.className = "grid-item";
+
+        // <img src="url"> </img>
+        let img = document.createElement("img");
+        img.className = "sorter";
+        img.src = `${data[pos].url}`;
+        bildeDiv.append(img);
+        gridContainer.appendChild(bildeDiv);
+    }
+</script>
+
+
+
 </html>

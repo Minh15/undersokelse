@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>                         Mitt reiseliv                   </title>
-    <link rel="script" href="css&js/javascript.js">
+    <script src="static/javascript.js"></script>
 
 <style>
       .grid-container {
@@ -12,14 +12,16 @@
         grid-template-columns: auto auto auto;
         background-color: #2196F3;
         padding: 10px;
-    }
+        margin-right: 20%;
+    }               
 
-      .grid-item {
+    .grid-item {
         background-color: rgba(255, 255, 255, 0.8);
         border: 1px solid rgba(0, 0, 0, 0.8);
         padding: 0;
         font-size: 30px;
         text-align: center;
+        
     }
 
      .sorter {
@@ -29,9 +31,26 @@
         object-fit: cover;
     }
 
-    </style>
+      button {
+          border: none;
+          outline: none;
+          padding: 10px 16px;
+          background-color: #f1f1f1;
+          cursor: pointer;
+          font-size: 18px;
+      }
 
+      button:hover {
+          background-color: #ddd;
+      }
+
+      button:active {
+          background-color: #666;
+          color: blue;
+      }
+    </style>
 </head>
+
 <body>
 
 <!-- Header -->
@@ -39,15 +58,39 @@
     <h1>Image Grid</h1>
 </div>
 
-<div class="grid-container">
-    <div class="grid-item"> <img class="sorter" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Logo_TVE-1.svg/1200px-Logo_TVE-1.svg.png"/></div>
-    <div class="grid-item"> <img class="sorter" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Logo_TVE-2.svg"/></div>
-    <div class="grid-item"> <img class="sorter" src="https://upload.wikimedia.org/wikipedia/commons/d/dd/France_3_2018.svg"/></div>
-    <div class="grid-item"> <img class="sorter" src="https://img.pixers.pics/pho_wat(s3:700/FO/57/91/04/80/700_FO57910480_30ce9f91636f63e81087a8ca165fda36.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/klistremerker-brann-alfabet-nummer-4-fire.jpg.jpg"/></div>
-    <div class="grid-item"> <img class="sorter" src="https://www.infobilder.com/bilde-nummer-5-dl20176.jpg"/></div>
-    <div class="grid-item"> <img class="sorter" src="https://gfx.nrk.no/2WPJvxq7jhP4mVU6cFp8sg-qM2GSJgABGqZP_46dOKGw"/></div>
+
+
+
+<button id="myBtn" onclick="prisSortering(data)">Sorter etter pris!</button>
+<button onclick="datoSortering(data)">Sorterer etter dato!!</button>
+
+
+
+
+<div id="bilder" class="grid-container">
+
 </div>
-
-
 </body>
+
+<script>
+    const gridContainer = document.getElementById("bilder");
+
+    for(let pos = 0; pos < data.length; pos++) {
+        // <div class="grid-item"></div>
+        let bildeDiv = document.createElement("div");
+        // let text = document.createElement("p")
+        // bildeDiv.append(text);
+     
+        bildeDiv.id = `${data[pos].sted} ${data[pos].dato}`;
+        bildeDiv.className = "grid-item";
+
+        // <img src="url"> </img>
+        let img = document.createElement("img");
+        img.className = "sorter";
+        img.src = `${data[pos].url}`;
+        bildeDiv.append(img);
+        gridContainer.appendChild(bildeDiv);
+    }
+
+</script>
 </html>
