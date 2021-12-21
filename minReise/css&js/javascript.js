@@ -12,6 +12,13 @@ const data = [
 
     }
 
+
+
+
+
+
+
+
 function tilSortering(data){
     let prisListe = [];
         for (let posisjon = 0; posisjon < data.length; posisjon++) {
