@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>                         Mitt reiseliv                   </title>
     <script src="static/javascript.js"></script>
+     <link rel="stylesheet" href="static/stilark.css">
 
 <style>
       .grid-container {
@@ -13,7 +14,7 @@
         background-color: #2196F3;
         padding: 10px;
         margin-right: 20%;
-    }               
+    }
 
     .grid-item {
         background-color: rgba(255, 255, 255, 0.8);
@@ -21,7 +22,7 @@
         padding: 0;
         font-size: 30px;
         text-align: center;
-        
+
     }
 
      .sorter {
@@ -53,17 +54,13 @@
 
 <body>
 
-<!-- Header -->
-<div class="header">
-    <h1>Image Grid</h1>
-</div>
+<ul id="nav-id" class="nav"></ul>
 
+    <h1>Bildesorteringsside</h1>
 
-
-
-<button id="myBtn" onclick="prisSortering(data)">Sorter etter pris!</button>
+<button onclick="prisSortering(data)">Sorter etter pris!</button>
 <button onclick="datoSortering(data)">Sorterer etter dato!!</button>
-
+<button onclick="stedSortering(data)">Sorterer etter land!</button>
 
 
 
@@ -73,15 +70,28 @@
 </body>
 
 <script>
-    const gridContainer = document.getElementById("bilder");
+    // kode for navbar
+    let nav = document.getElementById("nav-id");
+    for(let navText = 0; navText < navbar.length; navText++) {
+        let bar = document.createElement("li");
+        let link = document.createElement("a");
+        bar.className = "float";
+        link.innerText = navbar[navText].name
+        link.href = navbar[navText].href
+        bar.appendChild(link);
+        nav.appendChild(bar);
+    }
 
+    const gridContainer = document.getElementById("bilder");
+    // loop gjennom data
     for(let pos = 0; pos < data.length; pos++) {
-        // <div class="grid-item"></div>
+
         let bildeDiv = document.createElement("div");
         // let text = document.createElement("p")
         // bildeDiv.append(text);
-     
+
         bildeDiv.id = `${data[pos].sted} ${data[pos].dato}`;
+        // gir div klassen "grid-item"
         bildeDiv.className = "grid-item";
 
         // <img src="url"> </img>
