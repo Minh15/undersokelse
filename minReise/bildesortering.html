@@ -4,67 +4,30 @@
 
     <meta charset="UTF-8">
     <title>Mitt reiseliv</title>
-    <link rel="stylesheet" href="static/stilark.css">
+    <link rel="stylesheet" href="./static/stilark.css">
     <script src="static/javascript.js"></script>
-
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            background-color: #2196F3;
-            padding: 10px;
-            margin-right: 20%;
-        }
-
-        .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 0;
-            font-size: 30px;
-            text-align: center;
-
-        }
-
-        .sorter {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        button {
-            border: none;
-            outline: none;
-            padding: 10px 16px;
-            background-color: #f1f1f1;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        button:hover {
-            background-color: #ddd;
-        }
-
-        button:active {
-            background-color: #666;
-            color: blue;
-        }
-    </style>
 
 </head>
 <body>
 
 <ul id="nav-id" class="nav"></ul>
 
-<button onclick=filter(0)>Test</button>
-<button onclick=filter(1)>Test2</button>
-<button onclick=filter(2)>Test3</button>
+<h1> Overskrift </h1>
+
+<p > ipsum Lapsum </p>
+
+<div style="text-align: center">
+    <button onclick=filter(0)>Ford</button>
+    <button onclick=filter(1)>Toyota</button>
+    <button onclick=filter(2)>Kia</button>
+</div>
+
 
 <div id="bilder" class="grid-container"></div>
 
 </body>
 <script>
-    let bilListe = knapper[0].bilMerke
+    let bilListe = knapper[0].bilMerke;
 
     // kode for navbar
     let nav = document.getElementById("nav-id");
@@ -81,6 +44,7 @@
 
     function filter(index) {
         // index = [0, 1, 2]
+
         let nyeBiler = knapper[index].bilMerke;
         let gamleBiler = document.getElementById("bilder").children;
 
