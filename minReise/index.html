@@ -11,17 +11,18 @@
 <body>
 
 <div class="container">
-<img src="https://assets.codepen.io/5037447/dor_3.png" class="imgindex">
+    <img src="https://live.staticflickr.com/8570/15345109484_6504360c2a_b.jpg" class="imgindex">
     <h1 class="centered">Mitt liv i bevegelse</h1>
 </div>
 
 <ul id="nav-id" class="nav">
 </ul>
-<div id="hoved">
- <h1>Overskrift</h1>
-    <div class="divIdiv">
-    <p>Introduksjon </p>
-    </div>
+<div id="hoved" style=" width: 90%">
+    <h1>Mine reiser</h1>
+
+    <p> Velkommen til nettsiden min om reisene mine. På denne nettsiden skriver jeg som reisene mine. Foreløpig har jeg bare lagt til noen <br> få sider om hvilke land jeg har besøkt, hvilke transportsmidler jeg brukte (foreløpig bare biler) og en side    </p>
+<br>
+    <p> Notat: Min mening om denne oppgaven er at det var en god en. Det var vanskelig og tok mye arbeid med å finne ut hvordan man skulle bruke javascript for å lage nettsiden, men det var en god oppgave og fullt oppnåelig på vårt nivå. </p>
 </div>
 
 
@@ -29,12 +30,16 @@
 
 
 <script>
-
+ // Lager navbar
     let nav = document.getElementById("nav-id")
-    for(let navText = 0; navText < navbar.length; navText++) {
+ // Looper det et bestemt antall ganger (navbar.length)
+ for(let navText = 0; navText < navbar.length; navText++) {
+     // Legger til elementene "li" og "a"
         let bar = document.createElement("li");
         let link = document.createElement("a")
+     // Gir klasse til elementet "li"
         bar.className = "float";
+     // Gir tekstinnhold i elementet "li"
         link.innerText = navbar[navText].name
         link.href = navbar[navText].href
         bar.appendChild(link)
@@ -46,4 +51,3 @@
 
 
 
-</html>

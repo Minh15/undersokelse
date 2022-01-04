@@ -1,21 +1,22 @@
 
+    // liste for sortering av bilder (bildesortering.html)
 let data = [
-    {sted: "Poland", pris: 3000, dato: new Date("2020-05-15"), url: "https://gfx.nrk.no/2WPJvxq7jhP4mVU6cFp8sg-qM2GSJgABGqZP_46dOKGw"},
-    {sted: "Tyskland", pris: 2700, dato: new Date("2020-07-27"), url: "https://upload.wikimedia.org/wikipedia/commons/7/75/Logo_TVE-2.svg"},
-    {sted: "England", pris: 3450, dato: new Date ("2019-08-12"), url: "https://upload.wikimedia.org/wikipedia/commons/d/dd/France_3_2018.svg"},
-    {sted: "Frankrike", pris: 5200, dato: new Date("2019-09-04"), url: "https://www.infobilder.com/bilde-nummer-5-dl20176.jpg"},
-    {sted: "USA", pris: 7400, dato: new Date ("2016-04-18"), url: "https://img.pixers.pics/pho_wat(s3:700/FO/57/91/04/80/700_FO57910480_30ce9f91636f63e81087a8ca165fda36.jpg,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/klistremerker-brann-alfabet-nummer-4-fire.jpg.jpg"},
-    {sted: "Singapore", pris: 6800, dato: new Date ("2016-05-05"), url: "https://www.infobilder.com/bilde-nummer-5-dl20176.jpg"}
+    {sted: "Poland", pris: 3000, dato: new Date("2020-05-15"), url: "https://th.bing.com/th/id/R.60fa847aed87bf925c730cdd8c0a926c?rik=Xb4JYSJPkhLwVA&pid=ImgRaw&r=0"},
+    {sted: "Tyskland", pris: 2700, dato: new Date("2020-07-27"), url: "https://th.bing.com/th/id/R.5183ce72894996d58d2ebb710d49f231?rik=%2bf0N29BYZBAkIw&riu=http%3a%2f%2fwww.nejvetsimesta.cz%2fwp-content%2fgallery%2fberlin%2fnocni_berlin.jpg&ehk=C1x9oRXgnUOpRDA2YWz2StTCsPbikoNGsomBW1sYaGk%3d&risl=&pid=ImgRaw&r=0"},
+    {sted: "England", pris: 3450, dato: new Date ("2019-08-12"), url: "https://wallup.net/wp-content/uploads/2019/09/599328-united-kingdom-houses-roads-sky-london-big-ben-night-cities-3.jpg"},
+    {sted: "Frankrike", pris: 5200, dato: new Date("2019-09-04"), url: "https://wallup.net/wp-content/uploads/2019/09/538617-architecture-cities-france-light-towers-monuments-night-panorama-panoramic-paris-urban-temples-2.jpg"},
+    {sted: "USA", pris: 7400, dato: new Date ("2016-04-18"), url: "https://th.bing.com/th/id/OIP.ImrhzNoxYN-gIE0qDNuIYwHaE8?pid=ImgDet&rs=1"},
+    {sted: "Singapore", pris: 6800, dato: new Date ("2016-05-05"), url: "https://th.bing.com/th/id/R.a7e42cccb8d0b7269258bec36d792d2e?rik=x72UOWj%2b%2fHia0w&pid=ImgRaw&r=0"}
 ]
-
+    // Liste for navbar
 let navbar = [
-    {name:"Inbex", href: "./index.html"},
-    {name:"Feriebilder", href: "./jaja.html"},
-    {name:"Transportmidler", href: "./bildesortering.html"},
-    {name:"side4", href: "./brukerInput.html"}
+    {name:"Hovedside", href: "./index.html"},
+    {name:"Feriebilder", href: "./bildesortering.html"},
+    {name:"Transportmidler", href: "./transportmidler.html"},
+    {name:"Brukerinput", href: "./brukerInput.html"}
 ]
 
-
+    // Liste for radioknappesiden (transportmidler.html)
 let knapper = [
     {
         bilMerke: [
@@ -41,11 +42,7 @@ let knapper = [
 ]
 
     function prisSortering(data) {
-        // let prisListe = [];
-        //     for (let posisjon = 0; posisjon < data.length; posisjon++) {
-        //         prisListe.push(data[posisjon].pris)
-        //     }
-        // console.log("PrisListe array", prisListe)
+
         let sortert = data.sort((element1, element2) => { return element1.pris - element2.pris });
 
         let gridContainer = document.getElementById("bilder");

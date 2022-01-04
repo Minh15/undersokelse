@@ -1,4 +1,4 @@
-/* Codes for the navbar */
+/* Kode for navbaren */
 ul {
     list-style-type: none;
     margin: 0;
@@ -6,12 +6,14 @@ ul {
     overflow: hidden;
     background-color: #333;
 }
+
 /* Makes the nav bar float horizontally */
+
 li {
     float: left;
 }
-/* I dont know myself */
 
+/* I dont know myself */
 li a {
     display: block;
     color: white;
@@ -47,12 +49,13 @@ li a:hover {
 .container {
     position: relative;
     text-align: center;
-    color: green;
     margin-left: 0;
+    color: wheat;
+    font-family: "Century Gothic", sans-serif;
 }
 
 body {
-    background-color: white;
+    background-color: lightgray;
 }
 
 .centered {
@@ -65,11 +68,7 @@ body {
 #hoved{
     padding: 10px;
     margin: 10%;
-    background-color: darkgray;
-}
 
-.divIdiv {
-    background-color: lightgray;
 }
 
 p {
@@ -80,7 +79,7 @@ p {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+    background-color: darkgray;
     padding: 10px;
     margin-right: 20%;
 }
@@ -117,4 +116,27 @@ button:hover {
 button:active {
     background-color: #666;
     color: blue;
+}
+
+.fineKnapper {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+input, textarea, select {
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+#hoved {
+    width: 30%;
+    padding: 40px;
+    background-color: white;
+    border: 2px solid #cccccc;
+    margin: auto;
+}
+
+.checked {
+    color: orange;
 }
