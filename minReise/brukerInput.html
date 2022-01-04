@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/stilark.css">
+    <script src="static/javascript.js"></script>
+</head>
+<body>
+
+    <ul id="nav-id"></ul>
+
+    <h1 style="text-align: center"> Har du vært i et av de landene før? Legg igjen din mening!</h1>
+    <p style="padding: 10px"> Har du noen ekstra tanker eller noen spesielle steder du gjerne kunne dele om disse stedene?</p>
+    <div id="hoved">
+        <label for="land">Hvilket land var du i?</label>
+
+        <select id="land">
+            <option value="" selected disabled hidden>     Velg her      </option>
+            <option value="poland">     Poland      </option>
+            <option value="tyskland">   Tyskland    </option>
+            <option value="england">    England     </option>
+            <option value="frankrike">  Frankrike   </option>
+            <option value="usa">        USA         </option>
+            <option value="singapore">  Singapore   </option>
+        </select>
+
+        <label for="beskrivelse">Beskrivelse</label>
+
+        <textarea  id="beskrivelse" placeholder="Skriv kort om opplevelsen din"></textarea>
+
+        <label for="aarstall">Årstall</label>
+        <input type="number" id="aarstall" placeholder="1997">
+
+
+        <button onclick="document.location.reload(true)"> Send inn </button>
+
+
+<!--     <label for="aarstall">Årstall</label> -->
+<!--     <input type="number" id="aarstall" placeholder="1997">-->
+
+    </div>
+</body>
+
+<script>
+    // kode for navbar
+    let nav = document.getElementById("nav-id");
+    for(let navText = 0; navText < navbar.length; navText++) {
+        let bar = document.createElement("li");
+        let link = document.createElement("a");
+        bar.className = "float";
+        link.innerText = navbar[navText].name
+        link.href = navbar[navText].href
+        bar.appendChild(link);
+        nav.appendChild(bar);
+    }
+</script>
+</html>
