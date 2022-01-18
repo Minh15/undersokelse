@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #container {
+            height: 50%;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .gronn {
+            background-color: green;
+            padding: 20px;
+        }
+
+        .rod {
+            background-color: red;
+            padding: 20px;
+        }
+
+        #losning {
+            margin: 15px;
+            display: block;
+            padding: 50px;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        #losning li {
+            position: relative;
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            padding: 0 10px;
+            font-size:1.6em;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <!--Gi klasse "gjett" en verdi. Om tid, lag li-elementene i javascript istedenfor i html-->
+
+
+    <div id="container">
+
+        <form>
+
+        <p id="losning"> </p>
+        <p id="bokstaver"> Du har gjettet: </p>
+            <p id="beskjed"></p>
+
+            <!-- Brukerinput sendes inn i funksjonen brukerInput -->
+            <input type="text" name="gjettHer" id="input" placeholder="Skriv inn en bokstav" maxlength="1">
+            <input type="button" name="gjettHer" value="Send inn" onclick="flereFunksjoner()">
+
+
+            <p class="gronn" id="feil1">    </p>
+            <p class="gronn" id="feil2">    </p>
+            <p class="gronn" id="feil3">    </p>
+            <p class="gronn" id="feil4">    </p>
+            <p class="gronn" id="feil5">    </p>
+            <p class="gronn" id="feil6">    </p>
+        </form>
+
+    </div>
+</body>
+
+
+<script>
+
+    // aktiverer flere funksjoner
+function flereFunksjoner (){
+    brukerInput()
+    sjekk()
+    liv()
+}
+
+    const losningsord = ["B", "E", "R", "G", "E", "N"];
+    let gjettedeBokstaver = [];
+    let riktigeBokstaver = [];
+
+    let inputEl;
+    let feilGjettet = 0;
+
+    // Gir informasjon om hvor lang ordet er
+    function bokstaveriLosning() {
+        for (let i = 0; i < losningsord.length; i++) {
+            riktigeBokstaver.push("_");
+            document.getElementById("losning").innerText = riktigeBokstaver.join(" ");
+            document.getElementById ("beskjed").innerText = "Antall bokstaver i løsningsordet er: " + losningsord.length;
+
+        }
+    }
+    bokstaveriLosning()
+
+    //  Lagrer brukerinput og gjør den til stor bokstav
+    function brukerInput() {
+        inputEl = (document.getElementById("input").value).toUpperCase();
+        // console.log(inputEl)
+
+
+    }
+
+
+    //  Sjekker bokstaver
+    function sjekk () {
+
+        for (let i = 0; i < losningsord.length; i++) {
+            if (losningsord[i] === inputEl) {
+                riktigeBokstaver[i] = inputEl;
+                document.getElementById("losning").innerText = riktigeBokstaver.join(" ")
+            }
+        }
+
+        // Hindrer gjentatte bokstaver i arrayen gjettedeBokstaver
+        for (let j = 0; j < gjettedeBokstaver.length; j++) {
+            if (inputEl === gjettedeBokstaver[p]); {
+                alert("Du har allerede gjettet denne bokstaven!!!!!!!!! Gjett en ny bokstav!")
+                gjettedeBokstaver.pop(gjettedeBokstaver[p]);
+                console.log(inputEl)
+                console.log(j)
+                return
+            }
+        }
+
+
+        // Pusher inn brukerens gjettete bokstaver
+        gjettedeBokstaver.push(inputEl)
+
+        // sorterer bokstavene i arrayen, alfabetisk
+        gjettedeBokstaver.sort()
+
+        // feilGjettet++ if...
+        document.getElementById("bokstaver").innerText = "Du har gjettet:" + gjettedeBokstaver
+        let feil = losningsord.includes(inputEl);
+        if (feil == false) {
+            feilGjettet++;
+            console.log(feilGjettet)
+        }
+    }
+
+    function liv() {
+        let gjetteteOrdet = riktigeBokstaver.join("");
+        let losningsordet = losningsord.join("");
+        if (feilGjettet === 1) {
+            document.getElementById("feil1").classList.add("rod");
+        }
+        else if (feilGjettet === 2) {
+            document.getElementById("feil2").classList.add("rod");
+        }
+        else if (feilGjettet === 3) {
+            document.getElementById("feil3").classList.add("rod");
+        }
+        else if (feilGjettet === 4) {
+            document.getElementById("feil4").classList.add("rod");
+        }
+        else if (feilGjettet === 5) {
+            document.getElementById("feil5").classList.add("rod");
+            alert(Taper);
+        }
+        else if (gjetteteOrdet === losningsordet) {
+            alert("Winner! Winner! Chicken dinner!")
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function registrerSvar () {
+        inputEl = document.getElementById("")
+
+    }
+
+
+
+    // function svar() {
+    //     let input = (document.getElementById("tekst").value).toUpperCase();
+    //
+    //
+    //     for (let i = 0; i < losningsord.length; i++) {
+    //         if (input === ordBokstav[i]) {
+    //             riktigeBokstaver.push(input);
+    //             let ordetMitt = document.getElementById("ord").children;
+    //             console.log(input)
+    //             ordetMitt[0].innerHTML = "A"
+    //         }
+    //         else {
+    //             feilBokstaver.push(input);
+    //             let container = document.getElementById("container");
+    //             feilCounter++;
+    //             container.children[feilCounter].className = "rod";
+    //             break;
+    //         }
+    //
+    //     }
+    // }
+    // console.log(feilBokstaver);
+
+
+
+
+
+
+
+
+
+
+//    function sjekkGjetning () {}
+
+//    function dumBruker () {}
+
+//    dumBruker()
+
+//    sjekkGjetning()
+
+
+    // ordBokstav.includes(input) --> false: trenger ikke å loope. Er feil uansett
+    // ordBokstav.includes(input) --> true: loope for å finne hvilke bokstaver det var
+    // if (input ikke er riktig) {
+    //  Kode for å håndtere feil
+    // } else {
+    //  Loope gjennom for å sette riktig bokstav
+    // }
+    //           for (let e = 0; e < 6; e++) {
+    //sjekker om bruker gjetter riktig bokstav, fra ordlista
+    //endrer fargen til p-element om bruker gjetter feil bokstav
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Notat til Minhselv -->
+<!-- Lag en funksjon som sjekker om input er i array (items in array). Finn en måte for å finne index-en i en array (google) også sett input i riktig gjettede. Index-verdien til input skal puttes i følgende rekkefølge for brukeren å se (B,E,R,G,E,N) -->
+<!--Hvis ikke, pusher vi den i feilBokstav listen, lager en funksjon for å endre klassene til <p>-elementene. (google: Javascript, change classes) + lag en boks som viser feil gjettede bokstaver.-->
+<!--usikker fremgangsmåte-->
