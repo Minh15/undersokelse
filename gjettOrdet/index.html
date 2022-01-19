@@ -60,13 +60,13 @@
             <input type="text" name="gjettHer" id="input" placeholder="Skriv inn en bokstav" maxlength="1">
             <input type="button" name="gjettHer" value="Send inn" onclick="flereFunksjoner()">
 
-
+            <!-- Liv -->
             <p class="gronn" id="feil1">    </p>
             <p class="gronn" id="feil2">    </p>
             <p class="gronn" id="feil3">    </p>
             <p class="gronn" id="feil4">    </p>
             <p class="gronn" id="feil5">    </p>
-            <p class="gronn" id="feil6">    </p>
+
         </form>
 
     </div>
@@ -163,7 +163,7 @@ function flereFunksjoner (){
         }
         else if (feilGjettet === 5) {
             document.getElementById("feil5").classList.add("rod");
-            alert(Taper);
+            alert("Du tapte");
         }
         else if (gjetteteOrdet === losningsordet) {
             alert("Winner! Winner! Chicken dinner!")
